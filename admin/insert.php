@@ -1,6 +1,6 @@
 <?php session_start();
 include("db.php");
-if(isset($_POST['insert_franchise'])){
+if(isset($_POST['insert_service'])){
     if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
       $file_name = $_FILES['photo']['name'];
       $file_size =$_FILES['photo']['size'];
@@ -10,26 +10,26 @@ if(isset($_POST['insert_franchise'])){
       $file_ext=strtolower(end($tmp_explode));
       $extensions= array("jpeg","jpg","png");
     if(in_array($file_ext,$extensions)=== false){
-         header("Location:add-franchise.php?msg=File type not support");
+         header("Location:add-services.php?msg=File type not support");
         exit();
       }elseif($file_size > 2097152){
-        header("Location:add-franchise.php?msg=File size should be lessthan 2MB");
+        header("Location:add-services.php?msg=File size should be lessthan 2MB");
         exit();
       }else{
         $rand=rand(0,1000);
-        $filename="franchise-".$rand.'-'.$file_name;
-        $filepath=IMGPATH.$filename;
+        $filename="invicts-".$rand.'-'.$file_name;
+        $filepath="../images/service/".$filename;
          move_uploaded_file($file_tmp,$filepath);
     }
     }else{
         $filename="noimg.png";
     }
-    $ins=mysqli_query($conn,"INSERT INTO franchise (franchise_name,franchise_email,franchise_mobile,franchise_altr_mobile,franchise_image,franchise_location,franchise_address,franchise_city,franchise_state,franchise_pincode,franchise_country) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[altr_mobile]','$filename','$_POST[area]','$_POST[address]','$_POST[city]','$_POST[state]','$_POST[postcode]','$_POST[country]')");
+    $ins=mysqli_query($conn,"INSERT INTO services (title,description,status,image,date) VALUES('$_POST[title]','$_POST[description]','$_POST[status]','$filename',NOW())");
     if($ins){
-        header("Location:add-franchise.php?msg=branch created successfully");
+        header("Location:add-services.php?msg=Services created successfully");
         exit();
     }else{
-        header("Location:add-franchise.php?msg=Failed to create branch");
+        header("Location:add-services.php?msg=Failed to create Services");
         exit();
     }
 }elseif(isset($_POST['insert_customer'])){

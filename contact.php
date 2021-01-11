@@ -1,11 +1,7 @@
 <?php 
 	include("header.php");
 ?>
-
-
-
-
-        <section id="page-title" class="" data-bg-parallax="img/banner/sky.png">
+<section id="page-title" class="" data-bg-parallax="img/banner/sky.png">
             <div class="container" style="text-align: center;">
             <a href="index.php"> 
                 <img src="img/logo.png" alt="" class="width15"> </a>
@@ -17,12 +13,7 @@
                 </div>
                 <img src="img/banner/cloud.png" alt="" class="w-100">               
         </section>
-
-
-
-
-
-        <section id="con p-20">
+ <section id="con p-20">
 <img src="img/roc1.png" alt="" class="m2">  
 <img src="img/roc.png" alt="" class="m1">
 <img src="img/m1.png" alt="" class="m5">
@@ -30,11 +21,9 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="text-uppercase">Get In Touch</h3>
-                <p style="font-size:16px;" >For further enquiries about our services, you can get in touch with us through call or email. You can also visit our office directly to meet us in person.</p>
+                <p style="font-size:16px;" ><?=$admininfo['get_in_touch'];?></p>
                 <div class="m-t-30">
-
-
-                                                 <form class="widget-contact-form" novalidate action="contact.php" role="form" method="post">
+ <form class="widget-contact-form" novalidate action="contact.php" role="form" method="post">
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="name">Name</label>
@@ -77,10 +66,10 @@
 				<h3 class="text-uppercase">Address & Map</h3>
 				
 				<address>	
-    Plot No62, Exotic Villas, <br>
-Kaspapuram, Chennai 600126 <br>
-PH:<a href="tel:919894534064"> +91 9894534064</a><br>
-Email:<a href="mailto:invictsstudios@gmail.com">invictsstudios@gmail.com</a>
+                <?=$admininfo['admin_addr1'];?> <br>
+                <?=$admininfo['admin_addr2'];?> <br>
+PH:<a href="tel:<?=$admininfo['admin_mobile'];?>"> <?=$admininfo['admin_mobile'];?></a><br>
+Email:<a href="mailto:<?=$admininfo['admin_email'];?>"><?=$admininfo['admin_email'];?></a>
     </address>
                 
 

@@ -1,4 +1,5 @@
-<?php include(db.php);?>
+<?php include("admin/db.php");
+$admininfo=mysqli_fetch_assoc(mysqli_query($conn,"select admin_email,admin_mobile,admin_addr1,admin_addr2,get_in_touch FROM admin_profile WHERE admin_id='5'"));?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +36,7 @@
                     <div class="header-extras float-right">
                         <ul>
 
-                            <li class="hnum hicons"  style="color: #ffffff;" >+91 98945 34064</li>
+                            <li class="hnum hicons"  style="color: #ffffff;" ><?=$admininfo['admin_mobile'];?></li>
                             <li>
                                 <a id="menu-overlay-trigger" href="#" class="lines-button x toggle-item" data-target="body" data-class="menu-overlay-active">
                                     <span class="lines"></span>

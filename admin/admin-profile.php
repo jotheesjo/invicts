@@ -1,7 +1,6 @@
 <?php include("header.php");?>
 <?php include("aside.php");
-$info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE admin_username=".$_SESSION[ADMINSESSION.'user']));
-
+$info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE admin_id='5'"));
 ?>
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
@@ -23,7 +22,7 @@ $info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE a
                
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="card card-body">
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
@@ -43,6 +42,18 @@ $info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE a
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email address</label>
                                             <input type="email" class="form-control" id="exampleInputEmail1" name="admin_email" placeholder="Enter email" required value="<?=$info['admin_email'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Address Line 1</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" name="admin_addr1" placeholder="Enter Line 1" required value="<?=$info['admin_addr1'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Address Line 2</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" name="admin_addr2" placeholder="Enter Line 2" required value="<?=$info['admin_addr2'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Get in Touch</label>
+                                            <textarea class="form-control" placeholder="Get in Touch" required name="get_in_touch"><?=$info['get_in_touch'];?></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Change Password</label>

@@ -34,107 +34,35 @@ include("header.php");
             <p>Making your first impression in front of the investors is a very crucial part in such scenarios.</p>
         </div>
 
-
-
-        
-
-        <div class="row">
+        <?php $sq=mysqli_query($conn, "SELECT * FROM services WHERE status='1'");
+        $i='0';
+        while($row=mysqli_fetch_array($sq)){  
+            if($i % 2 == 0){ ?>
+ <div class="row">
             <div class="col-lg-3 text-md-right">
-                <h2 class="processh3 d-block d-md-none mb-0">  Explainer Videos   </h2>
-                <img src="img/service/Explainer_videos.png" class="wit100">
+                <h2 class="processh3 d-block d-md-none mb-0"> <?=$row['title'];?>   </h2>
+                <img src="images/service/<?=$row['image'];?>" class="wit100">
             </div>
 
             <div class="col-lg-9">
-                <h2 class="processh3 d-none d-md-block"> Explainer Videos </h2>
-                <p class="processp text-left"> Are you lost in the path where you are unable to find a solution of a task? Well, explainer videos are made just for that purpose. By providing information about the topic in a manner of instructions it helps you successfully complete the task. These videos are very effective that it is no wonder that people of all age group have started using them in the recent years.</p>
+                <h2 class="processh3 d-none d-md-block"> <?=$row['title'];?> </h2>
+                <p class="processp text-left"><?=$row['description'];?></p>
             </div>
         </div>
-        <!--1-->
-
-        <br>
-        <div class="row">
-        
-         <div class="col-lg-9 order-2 order-md-1">
-                <h2 class="processh3 d-none d-md-block"> Startup Videos </h2>
-                <p class="processp text-left"> Worried about landing a profitable deal for your amazing startup plan. Making your first impression in front of the investors is a very crucial part in such scenarios. This is where startup videos come in hand for you. Startup videos explains your business idea to the investors in a sleek and persuasive manner that keeps them engaged to your idea.  </p>
-            </div>
-
-             <div class="col-lg-3 order-1 order-md-2">
-                <h2 class="processh3 d-block d-md-none mb-0"> Startup Videos  </h2>
-                <img src="img/service/Startup_Videos.png" class="wit100">
-            </div>
-            
-        </div>
-        <!--2-->
-
-
-        <br>
-
-
-        <div class="row">
-            <div class="col-lg-3 text-md-right">
-                <h2 class="processh3 d-block d-md-none mb-0"> Animated Videos  </h2>
-                <img src="img/service/Animated_Videos.png" class="wit100">
-            </div>
-
-            <div class="col-lg-9">
-                <h2 class="processh3 d-none d-md-block"> Animated Videos </h2>
-                <p class="processp text-left"> A medium that was created to serve the purpose of entertainment to people. Animation videos have been a quiet some rage since past years in engaging with a lot of curious minds in the field of education. As an animated character presents the video the language is kept simple so that it can cater to people of all Age categories..</p>
-            </div>
-        </div>
-        <!--3-->
-
-        <br>
-
-
-        <div class="row">
-
-         <div class="col-lg-9 order-2 order-md-1">
-                <h2 class="processh3 d-none d-md-block"> Motion Graphics </h2>
-                <p class="processp text-left"> Unlike animated videos, motion graphics only uses text as visual and a background audio that details about the subject. Comparative to the former motion graphics is less demanding and easier to create. Motion graphic video is no stranger to people because it has been used widely in movie credits and advertisements. </p>
-            </div>
-
-            <div class="col-lg-3 order-1 order-md-2">
-                <h2 class="processh3 d-block d-md-none mb-0"> Motion Graphics  </h2>
-                <img src="img/service/Motion_Graphics.png" class="wit100">
-            </div>
-            
-        </div>
-        <!--4-->
-
-        <br>
-
-
-        <div class="row">
-            <div class="col-lg-3 text-md-right">
-                <h2 class="processh3 d-block d-md-none mb-0"> Corporate Videos  </h2>
-                <img src="img/service/Coroporate_Videos.png" class="wit100">
-            </div>
-
-            <div class="col-lg-9">
-                <h2 class="processh3 d-none d-md-block"> Corporate Videos </h2>
-                <p class="processp text-left"> We have all been in the shoes of presenting a product or an idea in front of the higher officials of your company. With our corporate videos you have a better shot at delivering impressive presentations and land successful mergers that in return boost’s your venture to the next level. </p>
-            </div>
-        </div>
-        <!--5-->
-
-        <br>
-
-        <div class="row">
-
-        <div class="col-lg-9 order-2 order-md-1">
-                <h2 class="processh3 d-none d-md-block"> 2D Cartoon videos  </h2>
-                <p class="processp text-left"> An age-old art form used by story tellers to say their stories were through 2D cartoon drawings and motion pictures. In our childhood every one of us have grown watching these cartoon videos. But its sole purpose was to provide entertainment to us. Invicts will use the technique of creating 2D cartoon videos, but apart from being entertaining it will also be informative and engaging to people.</p>
-            </div>
-
-            <div class="col-lg-3 order-1 order-md-2">
-                <h2 class="processh3 d-block d-md-none mb-0"> 2D Cartoon videos  </h2>
-                <img src="img/service/2d_Cartoon.png" class="wit100">
-            </div>
-            
-        </div>
-        <!--6-->
-        
+             <?php }else{ ?>
+ <div class="row">
+ <div class="col-lg-9">
+     <h2 class="processh3 d-none d-md-block"> <?=$row['title'];?> </h2>
+     <p class="processp text-left"><?=$row['description'];?></p>
+ </div>
+ <div class="col-lg-3 text-md-right">
+     <h2 class="processh3 d-block d-md-none mb-0"> <?=$row['title'];?>   </h2>
+     <img src="images/service/<?=$row['image'];?>" class="wit100">
+ </div>
+</div>
+         <?php    }
+           $i++; }?>
+       
 
     </div>
     <br>
