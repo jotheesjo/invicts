@@ -32,13 +32,36 @@ if(isset($_POST['insert_service'])){
         header("Location:add-services.php?msg=Failed to create Services");
         exit();
     }
-}elseif(isset($_POST['insert_customer'])){
-    $ins=mysqli_query($conn,"INSERT INTO customers (customer_name ,customer_email ,customer_mobile,customer_altr_mobile,customer_address,customer_city,customer_state,customer_country,customer_pincode) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[altr_mobile]','$_POST[address]','$_POST[city]','$_POST[state]','$_POST[country]','$_POST[postcode]')");
+}elseif(isset($_POST['insert_process'])){
+    if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+      $file_name = $_FILES['photo']['name'];
+      $file_size =$_FILES['photo']['size'];
+      $file_tmp =$_FILES['photo']['tmp_name'];
+      $file_type=$_FILES['photo']['type'];
+        $tmp_explode=explode('.',$file_name);
+      $file_ext=strtolower(end($tmp_explode));
+      $extensions= array("jpeg","jpg","png");
+    if(in_array($file_ext,$extensions)=== false){
+         header("Location:add-process.php?msg=File type not support");
+        exit();
+      }elseif($file_size > 2097152){
+        header("Location:add-process.php?msg=File size should be lessthan 2MB");
+        exit();
+      }else{
+        $rand=rand(0,1000);
+        $filename="invicts-".$rand.'-'.$file_name;
+        $filepath="../images/process/".$filename;
+         move_uploaded_file($file_tmp,$filepath);
+    }
+    }else{
+        $filename="noimg.png";
+    }
+    $ins=mysqli_query($conn,"INSERT INTO process (title,description,status,image,date) VALUES('$_POST[title]','$_POST[description]','$_POST[status]','$filename',NOW())");
     if($ins){
-        header("Location:add-customer.php?msg=customer created successfully");
+        header("Location:add-process.php?msg=Process created successfully");
         exit();
     }else{
-        header("Location:add-customer.php?msg=Failed to create customer");
+        header("Location:add-process.php?msg=Failed to create Process");
         exit();
     }
 }elseif(isset($_POST['insert_corporate'])){
