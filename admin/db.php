@@ -1,5 +1,4 @@
 <?php 
-//$conn =mysqli_connect("localhost","icloudcs_5ktime","icloudcs_5ktime","icloudcs_5ktime");
 $conn =mysqli_connect("localhost","root","","invicts");
 date_default_timezone_set('Asia/Kolkata');
 define("ADMINSESSION","admin_session_");
