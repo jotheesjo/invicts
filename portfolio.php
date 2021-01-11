@@ -30,210 +30,25 @@
 
 
                 <div data-lightbox="gallery" class="row">
-                    
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
+                <?php $sq=mysqli_query($conn, "SELECT * FROM portfolio WHERE status='1'");
+                while($row=mysqli_fetch_array($sq)){   ?>
+                 <div class="col-lg-4" style="padding: 0 35px 35px;">
                     <div class="grid-item">
                         <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/1.webp" />
+                            <div class="grid-image"> <img alt="Image Lightbox" src="images/portfolio/<?=$row['image'];?>" />
                             </div>
                             <div class="oport">
-                                <h5 style="margin-bottom: 0px;">Whiteboard Explainer video for a law firm</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
+                                <h5 style="margin-bottom: 0px;"><?=$row['title'];?></h5>
+                                <p><?=$row['description'];?></p>
                                 <hr>
                             </div>
                             <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=fuo3I-cq2EM" data-lightbox="iframe"><i class="icon-play"></i></a>
+                                <a href="<?=$row['link'];?>" data-lightbox="iframe"><i class="icon-play"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4" style="padding: 0 35px 35px;">
-                    <div class="grid-item">
-                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/2.webp" />
-                            </div>
-                            <div class="oport">
-                                <h5 style="margin-bottom: 0px;">An Explainer video for Security app</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                <hr>
-                            </div>
-                            <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=ucfy_9zRd98" data-lightbox="iframe"><i class="icon-play"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4" style="padding: 0 35px 35px;">
-                    <div class="grid-item">
-                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/3.webp" />
-                            </div>
-                            <div class="oport">
-                                <h5 style="margin-bottom: 0px;">Infographics video for a software development company</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                <hr>
-                            </div>
-                            <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=LcCRxku067o" data-lightbox="iframe"><i class="icon-play"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4" style="padding: 0 35px 35px;">
-                    <div class="grid-item">
-                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/4.webp" />
-                            </div>
-                            <div class="oport">
-                                <h5 style="margin-bottom: 0px;">Book your Lifestyle</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                <hr>
-                            </div>
-                            <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=132lBovSPNY" data-lightbox="iframe"><i class="icon-play"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4" style="padding: 0 35px 35px;">
-                    <div class="grid-item">
-                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/5.webp" />
-                            </div>
-                            <div class="oport">
-                                <h5 style="margin-bottom: 0px;">An Explainer Video for Steel building Company</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                <hr>
-                            </div>
-                            <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=igT66OcCON0" data-lightbox="iframe"><i class="icon-play"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4" style="padding: 0 35px 35px;">
-                    <div class="grid-item">
-                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                            <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/6.webp" />
-                            </div>
-                            <div class="oport">
-                                <h5 style="margin-bottom: 0px;">An Explainer Video for an offshore asset management company</h5>
-                                <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                <hr>
-                            </div>
-                            <div class="grid-description">
-                                <a href="https://www.youtube.com/watch?v=4fmYb36lELY" data-lightbox="iframe"><i class="icon-play"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/7.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for Restaurant Reservation System</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=4dSZhrmMNJQ" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/8.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for Multiple Sclerosis treatment</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=o2VM_0KPaew" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/9.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for e-cigarettes selling Company</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=0dQ83fQ9kUE" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/10.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for Driving Safely</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=nsznhRKJaE8" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/11.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for a Consultancy company</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=cRe4wXCPmSw" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" style="padding: 0 35px 35px;">
-                        <div class="grid-item">
-                            <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-                                <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/12.webp" />
-                                </div>
-                                <div class="oport">
-                                    <h5 style="margin-bottom: 0px;">An Explainer Video for investment and property development company</h5>
-                                    <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-                                    <hr>
-                                </div>
-                                <div class="grid-description">
-                                    <a href="https://www.youtube.com/watch?v=T0ugAtvEtxM" data-lightbox="iframe"><i class="icon-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
 
                 </div>
 

@@ -64,37 +64,36 @@ if(isset($_POST['insert_service'])){
         header("Location:add-process.php?msg=Failed to create Process");
         exit();
     }
-}elseif(isset($_POST['insert_corporate'])){
-if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+}elseif(isset($_POST['insert_portfolio'])){
+    if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
       $file_name = $_FILES['photo']['name'];
       $file_size =$_FILES['photo']['size'];
       $file_tmp =$_FILES['photo']['tmp_name'];
       $file_type=$_FILES['photo']['type'];
         $tmp_explode=explode('.',$file_name);
       $file_ext=strtolower(end($tmp_explode));
-      $extensions= array("jpeg","jpg","png");
+      $extensions= array("jpeg","jpg","png","webp");
     if(in_array($file_ext,$extensions)=== false){
-         header("Location:add-corporate-information.php?msg=File type not support");
+         header("Location:add-portfolio.php?msg=File type not support");
         exit();
       }elseif($file_size > 2097152){
-        header("Location:add-corporate-information.php?msg=File size should be lessthan 2MB");
+        header("Location:add-portfolio.php?msg=File size should be lessthan 2MB");
         exit();
       }else{
         $rand=rand(0,1000);
-        $filename="employee-".$rand.'-'.$file_name;
-        $filepath=IMGPATH.$filename;
+        $filename="invicts-".$rand.'-'.$file_name;
+        $filepath="../images/portfolio/".$filename;
          move_uploaded_file($file_tmp,$filepath);
     }
     }else{
         $filename="noimg.png";
     }
-    $pwd=base64_encode($_POST['password']);
-    $ins=mysqli_query($conn,"INSERT INTO employees (emp_name,emp_email,emp_mobile,emp_altr_mobile,emp_image,emp_department,emp_address,emp_city,emp_state,emp_pincode,emp_country,emp_role,emp_password) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[altr_mobile]','$filename','$_POST[department]','$_POST[address]','$_POST[city]','$_POST[state]','$_POST[postcode]','$_POST[country]','$_POST[emp_role]','$pwd')");
+    $ins=mysqli_query($conn,"INSERT INTO portfolio (title,description,status,image,date,link) VALUES('$_POST[title]','$_POST[description]','$_POST[status]','$filename',NOW(),'$_POST[link]')");
     if($ins){
-        header("Location:add-corporate-information.php?msg=employee created successfully");
+        header("Location:add-portfolio.php?msg=Portfolio created successfully");
         exit();
     }else{
-        header("Location:add-corporate-information.php?msg=Failed to create employee");
+        header("Location:add-portfolio.php?msg=Failed to create Portfolio");
         exit();
     }
 }elseif(isset($_POST['insert_task'])){

@@ -10,6 +10,8 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li> <a class="waves-effect waves-dark" href="dashboard.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="about.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">About</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="portfolio.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Portfolio</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="process.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Process</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="services.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Services</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="admin-profile.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Contact</span></a></li>

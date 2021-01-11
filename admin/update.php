@@ -29,10 +29,10 @@ if(isset($_POST['update_service'])){
         $file_ext=strtolower(end($tmp_explode));
         $extensions= array("jpeg","jpg","png");
       if(in_array($file_ext,$extensions)=== false){
-           header("Location:add-vendor.php?msg=File type not support");
+           header("Location:services?msg=File type not support");
           exit();
         }elseif($file_size > 2097152){
-          header("Location:add-vendor.php?msg=File size should be lessthan 2MB");
+          header("Location:services.php?msg=File size should be lessthan 2MB");
           exit();
         }else{
           $rand=rand(0,1000);
@@ -55,37 +55,108 @@ if(isset($_POST['update_service'])){
 }
 // update process
 if(isset($_POST['update_process'])){
-    if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
-        $file_name = $_FILES['photo']['name'];
-        $file_size =$_FILES['photo']['size'];
-        $file_tmp =$_FILES['photo']['tmp_name'];
-        $file_type=$_FILES['photo']['type'];
-          $tmp_explode=explode('.',$file_name);
-        $file_ext=strtolower(end($tmp_explode));
-        $extensions= array("jpeg","jpg","png");
-      if(in_array($file_ext,$extensions)=== false){
-           header("Location:add-vendor.php?msg=File type not support");
-          exit();
-        }elseif($file_size > 2097152){
-          header("Location:add-vendor.php?msg=File size should be lessthan 2MB");
-          exit();
-        }else{
-          $rand=rand(0,1000);
-          $filename="vendor-".$rand.'-'.$file_name;
-          $filepath="../images/process/".$filename;
-           move_uploaded_file($file_tmp,$filepath);
-      }
+  if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+      $file_name = $_FILES['photo']['name'];
+      $file_size =$_FILES['photo']['size'];
+      $file_tmp =$_FILES['photo']['tmp_name'];
+      $file_type=$_FILES['photo']['type'];
+        $tmp_explode=explode('.',$file_name);
+      $file_ext=strtolower(end($tmp_explode));
+      $extensions= array("jpeg","jpg","png");
+    if(in_array($file_ext,$extensions)=== false){
+         header("Location:process.php?msg=File type not support");
+        exit();
+      }elseif($file_size > 2097152){
+        header("Location:process.php?msg=File size should be lessthan 2MB");
+        exit();
       }else{
-          $filename=$_POST['img'];
-      }
-      
-      $q=mysqli_query($conn,"UPDATE process SET title ='$_POST[title]',description='$_POST[description]',status ='$_POST[status]',image='$filename' WHERE process_id='$_POST[process_id]'");
-      if($q){
-  
-          header('Location:process.php?msg=detail updated successfully');
-          exit();
+        $rand=rand(0,1000);
+        $filename="vendor-".$rand.'-'.$file_name;
+        $filepath="../images/process/".$filename;
+         move_uploaded_file($file_tmp,$filepath);
+    }
+    }else{
+        $filename=$_POST['img'];
+    }
+    
+    $q=mysqli_query($conn,"UPDATE process SET title ='$_POST[title]',description='$_POST[description]',status ='$_POST[status]',image='$filename' WHERE process_id='$_POST[process_id]'");
+    if($q){
+
+        header('Location:process.php?msg=detail updated successfully');
+        exit();
+    }else{
+        header('Location:process.php?msg=Failed to update detail');
+    }
+}
+// update portfolio
+if(isset($_POST['update_portfolio'])){
+  if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+      $file_name = $_FILES['photo']['name'];
+      $file_size =$_FILES['photo']['size'];
+      $file_tmp =$_FILES['photo']['tmp_name'];
+      $file_type=$_FILES['photo']['type'];
+        $tmp_explode=explode('.',$file_name);
+      $file_ext=strtolower(end($tmp_explode));
+      $extensions= array("jpeg","jpg","png","webp");
+    if(in_array($file_ext,$extensions)=== false){
+         header("Location:portfolio.php?msg=File type not support");
+        exit();
+      }elseif($file_size > 2097152){
+        header("Location:portfolio.php?msg=File size should be lessthan 2MB");
+        exit();
       }else{
-          header('Location:process.php?msg=Failed to update detail');
-      }
+        $rand=rand(0,1000);
+        $filename="vendor-".$rand.'-'.$file_name;
+        $filepath="../images/portfolio/".$filename;
+         move_uploaded_file($file_tmp,$filepath);
+    }
+    }else{
+        $filename=$_POST['img'];
+    }
+    
+    $q=mysqli_query($conn,"UPDATE portfolio SET title ='$_POST[title]',description='$_POST[description]',status ='$_POST[status]',image='$filename',link ='$_POST[link]' WHERE portfolio_id='$_POST[portfolio_id]'");
+    if($q){
+
+        header('Location:portfolio.php?msg=detail updated successfully');
+        exit();
+    }else{
+        header('Location:portfolio.php?msg=Failed to update detail');
+    }
+}
+
+// update about
+if(isset($_POST['update_about'])){
+  if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+      $file_name = $_FILES['photo']['name'];
+      $file_size =$_FILES['photo']['size'];
+      $file_tmp =$_FILES['photo']['tmp_name'];
+      $file_type=$_FILES['photo']['type'];
+        $tmp_explode=explode('.',$file_name);
+      $file_ext=strtolower(end($tmp_explode));
+      $extensions= array("jpeg","jpg","png","webp");
+    if(in_array($file_ext,$extensions)=== false){
+         header("Location:about.php?msg=File type not support");
+        exit();
+      }elseif($file_size > 2097152){
+        header("Location:about.php?msg=File size should be lessthan 2MB");
+        exit();
+      }else{
+        $rand=rand(0,1000);
+        $filename="vendor-".$rand.'-'.$file_name;
+        $filepath="../images/about/".$filename;
+         move_uploaded_file($file_tmp,$filepath);
+    }
+    }else{
+        $filename=$_POST['img'];
+    }
+    $description=mysqli_real_escape_string($conn,$_POST['paragraph']);
+    $q=mysqli_query($conn,"UPDATE about SET title1 ='$_POST[title1]',subtitle1='$_POST[subtitle1]',paragraph ='$description',image='$filename',title2 ='$_POST[title2]',subtitle2 ='$_POST[subtitle2]',sec1 ='$_POST[sec1]',sec2 ='$_POST[sec2]',sec3 ='$_POST[sec3]',sec4 ='$_POST[sec4]' WHERE about_id='1'");
+    if($q){
+
+        header('Location:about.php?msg=detail updated successfully');
+        exit();
+    }else{
+        header('Location:about.php?msg=Failed to update detail');
+    }
 }
 ?>
