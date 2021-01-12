@@ -206,4 +206,15 @@ if(isset($_POST['update_homesec1'])){
         header('Location:home-section1.php?msg=Failed to update detail');
     }
 }
+// update_homesec2
+if(isset($_POST['update_homesec2'])){
+  $q=mysqli_query($conn,"UPDATE home_section2 SET title ='$_POST[title]',description='$_POST[description]',status ='$_POST[status]' WHERE home_id='$_POST[home_id]'");
+  if($q){
+
+      header('Location:home-section2.php?msg=detail updated successfully');
+      exit();
+  }else{
+      header('Location:home-section2.php?msg=Failed to update detail');
+  }
+}
 ?>

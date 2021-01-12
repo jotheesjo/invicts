@@ -15,7 +15,7 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section1 WHE
                     <div class="card-body">
                         <form action="update.php" method="post" enctype="multipart/form-data">
                             <div class="form-body">
-                                <h3 class="card-title">Edit Process</h3>
+                                <h3 class="card-title">Edit Section</h3>
                                 <?php if(isset($_GET['msg'])){
                         echo '<br/><p style="color:#ff0000">'.$_GET['msg'].'</p>';
                         }?>

@@ -141,16 +141,13 @@ if(isset($_POST['insert_service'])){
         exit();
     }
 }
-elseif(isset($_POST['insert_admin'])){
-    
-   $pwd=md5($_POST['mobile']);
-    $ins=mysqli_query($conn,"INSERT INTO admin_profile (admin_name,admin_email,admin_mobile,admin_username,admin_password,admin_role,admin_status) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[username]','$pwd','admin','1')");    
-//echo "INSERT INTO admin_profile (admin_name,admin_email,admin_mobile,admin_username,admin_password,admin_role,admin_status) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[username]','$pwd','admin','1')";
+elseif(isset($_POST['insert_homesec2'])){
+    $ins=mysqli_query($conn,"INSERT INTO home_section2 (title,description,status) VALUES('$_POST[title]','$_POST[description]','$_POST[status]')");    
     if($ins){
-        header("Location:add-admin.php?msg=admin created successfully");
+        header("Location:add-home-section2.php?msg=section created successfully");
         exit();
     }else{
-        header("Location:add-admin.php?msg=Failed to create admin");
+        header("Location:add-home-section2.php?msg=Failed to create section");
         exit();
     }
     
