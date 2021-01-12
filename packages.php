@@ -45,7 +45,7 @@
                     <div class="plan-list">
                         <ul>            <?php $features = json_decode($row['package_info'], true);
                                         foreach ($features as $key => $value) { ?>
-                                        <li><?php if($value=='1'){ echo '<i class="icon-x-circle red"> </i> '; }else{ echo '<i class="icon-check-circle green"> </i> ';} ?><?=$key;?></li>
+                                        <li><?php if($value=='0'){ echo '<i class="icon-x-circle red"> </i> '; }else{ echo '<i class="icon-check-circle green"> </i> ';} ?><?=$key;?></li>
                                         
                                         <?php } ?>
                         </ul>

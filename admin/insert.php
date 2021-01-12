@@ -107,13 +107,37 @@ if(isset($_POST['insert_service'])){
     header("Location:add-packages.php?msg=Failed to create Package");
     exit();
    }
-}elseif(isset($_POST['insert_proj_task'])){
-    $ins=mysqli_query($conn,"INSERT INTO project_task (proj_project_id,proj_assign_to,proj_comments,proj_task_create_by,proj_task_create_date,proj_task_status) VALUES('$_POST[project]','$_POST[assign_to]','$_POST[proj_comments]','$_SESSION[admin_session_id]',NOW(),'$_POST[task_status]')");
+}elseif(isset($_POST['insert_homesec1'])){
+  if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+    $file_name = $_FILES['photo']['name'];
+    $file_size =$_FILES['photo']['size'];
+    $file_tmp =$_FILES['photo']['tmp_name'];
+    $file_type=$_FILES['photo']['type'];
+      $tmp_explode=explode('.',$file_name);
+    $file_ext=strtolower(end($tmp_explode));
+    $extensions= array("jpeg","jpg","png","webp","gif");
+  if(in_array($file_ext,$extensions)=== false){
+       header("Location:add-home-section1.php?msg=File type not support");
+      exit();
+    }elseif($file_size > 2097152){
+      header("Location:add-home-section1.php?msg=File size should be lessthan 2MB");
+      exit();
+    }else{
+      $rand=rand(0,1000);
+      $filename="invicts-".$rand.'-'.$file_name;
+      $filepath="../images/home/".$filename;
+       move_uploaded_file($file_tmp,$filepath);
+  }
+  }else{
+      $filename="noimg.png";
+  }
+
+    $ins=mysqli_query($conn,"INSERT INTO home_section1 (title,link,image,status) VALUES('$_POST[title]','$_POST[link]','$filename','$_POST[status]')");
                       if($ins){
-        header("Location:add-project-task.php?msg=Task created successfully");
+        header("Location:add-home-section1.php?msg=Section created successfully");
         exit();
     }else{
-        header("Location:add-project-task.php?msg=Failed to create Task");
+        header("Location:add-home-section1.php?msg=Failed to create Section");
         exit();
     }
 }
