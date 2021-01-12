@@ -11,18 +11,11 @@
             <ul id="sidebarnav">
                 <li> <a class="waves-effect waves-dark" href="dashboard.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="about.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">About</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="packages.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Packages</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="portfolio.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Portfolio</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="process.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Process</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="services.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Services</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="admin-profile.php" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Contact</span></a></li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">Prediction</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="life-prediction.php">Life Prediction<i class="far fa-circle text-primary"></i></a></li>
-                        <li><a href="horary-prediction.php">Horary Prediction<i class="far fa-circle text-success"></i></a></li>
-                        <li><a href="marriage-prediction.php">Marriage Matching <i class="far fa-circle text-info"></i></a></li>
-                        <li><a href="prediction-list.php">Free Prediction <i class="far fa-circle text-info"></i></a></li>
-                    </ul>
-                </li>
                 
             </ul>
         </nav>

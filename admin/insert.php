@@ -96,21 +96,17 @@ if(isset($_POST['insert_service'])){
         header("Location:add-portfolio.php?msg=Failed to create Portfolio");
         exit();
     }
-}elseif(isset($_POST['insert_task'])){
-//    print_r($_POST);
-    $req_service= implode(',',$_POST['req_service']);
-    $task_handler= implode(',',$_POST['task_handler']);
-    
-    $ins=mysqli_query($conn,"INSERT INTO projects (proj_name,client_name,client_email,client_mobile,client_altr_mobile,req_service,proj_handler,proj_open_date) VALUES('$_POST[proj_name]','$_POST[client_name]','$_POST[email]','$_POST[mobile]','$_POST[altr_mobile]','$req_service','$task_handler','$_POST[open_date]')");    
-    
-    if($ins){
-        header("Location:add-task.php?msg=Project created successfully");
-        exit();
-    }else{
-        header("Location:add-task.php?msg=Project to create task");
-        exit();
-    }
-    
+}elseif(isset($_POST['insert_package'])){
+   $features=array_combine($_POST['fea_name'], $_POST['featuresstatus']);
+   $feature=json_encode($features);
+   $ins=mysqli_query($conn,"INSERT INTO packages (title,subtitle,status,package_info,date) VALUES ('$_POST[title]','$_POST[subtitile]','$_POST[status]','$feature',NOW())");
+   if($ins){
+    header("Location:add-packages.php?msg=Package created successfully");
+    exit();
+   }else{
+    header("Location:add-packages.php?msg=Failed to create Package");
+    exit();
+   }
 }elseif(isset($_POST['insert_proj_task'])){
     $ins=mysqli_query($conn,"INSERT INTO project_task (proj_project_id,proj_assign_to,proj_comments,proj_task_create_by,proj_task_create_date,proj_task_status) VALUES('$_POST[project]','$_POST[assign_to]','$_POST[proj_comments]','$_SESSION[admin_session_id]',NOW(),'$_POST[task_status]')");
                       if($ins){
