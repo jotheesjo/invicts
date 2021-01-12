@@ -28,27 +28,26 @@
             </div>
         </div>
         <!-- <hr class="space"> -->
+        
         <div class="row pricing-table">
-            <div class="col-lg-4 col-md-12 col-12">
-                <div class="plan">
+        <?php $packages= mysqli_query($conn,"SELECT * FROM packages WHERE status='1'");
+        $i=0;
+        while($row=mysqli_fetch_array($packages)){
+            $i++; ?>
+
+<div class="col-lg-4 col-md-12 col-12">
+                <div class="plan <?php if($i=='2'){ echo " featured";}?>">
                     <div class="plan-header">
-                        <h4>Basic</h4>
-                        <p class="text-muted">Plan short description</p>
-                        <div class="plan-price">01.</div>
+                        <h4><?=$row['title'];?></h4>
+                        <p class="text-muted"><?=$row['subtitle'];?></p>
+                        <div class="plan-price">0<?=$i;?>.</div>
                     </div>
                     <div class="plan-list">
-                        <ul>                       
-                                        <li><i class="icon-x-circle red"> </i> Scriptwriting</li>
-										<li>  <i class="icon-x-circle red"> </i> Moodboards</li>
-                                        <li><i class="icon-check-circle green"></i> Graphic styles</li>
-										<li><i class="icon-x-circle red"> </i> Storyboard sketches</li>                                        
-										<li><i class="icon-check-circle green"></i> Digital Storyboard</li>
-										<li><i class="icon-check-circle green"></i> Royalty free music</li>
-										<li><i class="icon-check-circle green"></i> Basic voiceover</li>
-										<li><i class="icon-check-circle green"></i> 2X Revisions</li>
-										<li><i class="icon-check-circle green"></i> Basic SFX</li>
-										<li><i class="icon-check-circle green"></i> 2 Weeks</li>										
-										<li> <i class="icon-x-circle red"> </i> Dedicated Team</li>						
+                        <ul>            <?php $features = json_decode($row['package_info'], true);
+                                        foreach ($features as $key => $value) { ?>
+                                        <li><?php if($value=='1'){ echo '<i class="icon-x-circle red"> </i> '; }else{ echo '<i class="icon-check-circle green"> </i> ';} ?><?=$key;?></li>
+                                        
+                                        <?php } ?>
                         </ul>
                         <div class="plan-button">
                         <a href="contact.php#con" class="btn btn-rounded btn-light">Contact </a>
@@ -57,62 +56,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-4 col-md-12 col-12">
-                <div class="plan featured">
-                    <div class="plan-header">
-                        <h4>Premium</h4>
-                        <p class="text-muted">Plan short description</p>
-                        <div class="plan-price">02.</div>
-                    </div>
-                    <div class="plan-list">
-                        <ul>                       
-										<li><i class="icon-check-circle green"></i> Scriptwriting</li>
-										<li> <i class="icon-x-circle red"> </i>  Moodboards</li>
-                                        <li><i class="icon-check-circle green"></i> Graphic styles</li>
-										<li><i class="icon-x-circle red"> </i> Storyboard sketches</li>                                        
-										<li><i class="icon-check-circle green"></i> Digital Storyboard</li>
-										<li><i class="icon-check-circle green"></i> Royalty free music</li>
-										<li><i class="icon-check-circle green"></i> Pro voiceover</li>
-										<li><i class="icon-check-circle green"></i> 3X Revisions</li>
-										<li><i class="icon-check-circle green"></i> Premium SFX</li>
-										<li><i class="icon-check-circle green"></i> 3 Weeks</li>										
-										<li><i class="icon-x-circle red"> </i> Dedicated Team</li>							
-                        </ul>
-                        <div class="plan-button">
-                            <a href="contact.php#con" class="btn btn-rounded btn-light">Contact </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-12 col-12">
-                <div class="plan">
-                    <div class="plan-header">
-                        <h4>Elite</h4>
-                        <p class="text-muted">Plan short description</p>
-                        <div class="plan-price">03.</div>
-                    </div>
-                    <div class="plan-list">
-                        <ul>                       
-                        <li><i class="icon-check-circle green"></i> Scriptwriting</li>
-										<li> <i class="icon-check-circle green"></i>  Moodboards</li>
-                                        <li><i class="icon-check-circle green"></i> Graphic styles</li>
-										<li><i class="icon-check-circle green"></i> Storyboard sketches</li>                                        
-										<li><i class="icon-check-circle green"></i> Digital Storyboard</li>
-										<li><i class="icon-check-circle green"></i> Royalty free music</li>
-										<li><i class="icon-check-circle green"></i> Pro voiceover</li>
-										<li><i class="icon-check-circle green"></i> Unlimited Revisions</li>
-										<li><i class="icon-check-circle green"></i> Premium SFX</li>
-										<li><i class="icon-check-circle green"></i> 4 Weeks</li>										
-										<li><i class="icon-check-circle green"></i> Dedicated Team</li>						
-                        </ul>
-                        <div class="plan-button">
-                        <a href="contact.php#con" class="btn btn-rounded btn-light">Contact </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>
             
             
         </div>

@@ -113,7 +113,6 @@ if(isset($_POST['update_portfolio'])){
     }else{
         $filename=$_POST['img'];
     }
-    
     $q=mysqli_query($conn,"UPDATE portfolio SET title ='$_POST[title]',description='$_POST[description]',status ='$_POST[status]',image='$filename',link ='$_POST[link]' WHERE portfolio_id='$_POST[portfolio_id]'");
     if($q){
 
@@ -159,4 +158,19 @@ if(isset($_POST['update_about'])){
         header('Location:about.php?msg=Failed to update detail');
     }
 }
+
+// packages
+if(isset($_POST['update_packages'])){
+  $features=array_combine($_POST['fea_name'], $_POST['featuresstatus']);
+  $feature=json_encode($features);
+  $q=mysqli_query($conn,"UPDATE packages SET title ='$_POST[title]',subtitle='$_POST[subtitle]',status ='$_POST[status]',package_info='$feature' WHERE packages_id='$_POST[packages_id]'");
+  if($q){
+
+      header('Location:packages.php?msg=detail updated successfully');
+      exit();
+  }else{
+      header('Location:packages.php?msg=Failed to update detail');
+  }
+}
+
 ?>

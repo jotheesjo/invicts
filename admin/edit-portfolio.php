@@ -1,7 +1,7 @@
 <?php include("header.php");
 include("aside.php");
 if(isset($_GET['id'])){
-$app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM portfolio WHERE pportfolio_id='$_GET[id]'"));
+$app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM portfolio WHERE portfolio_id='$_GET[id]'"));
 }
 ?>
 
