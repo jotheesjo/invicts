@@ -81,7 +81,7 @@
 </script>
 
 <script>
- tinymce.init({ selector:'.tinymce',
+ tinymce.init({ selector:'textarea',
     plugins: "code image media print autoresize link autolink"
     });
 

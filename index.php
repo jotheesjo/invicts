@@ -26,19 +26,19 @@ include("header.php");
 
                 <a href="#">
 
-                            <img style="margin-top:-5rem;" src="img/logos.png">
+                    <img style="margin-top:-5rem;" src="img/logos.png">
 
-                        </a>
+                </a>
 
                 <!-- <span data-animate="fadeInUp" class="strong"><a href="#" class="business"><span class="business">Let's Do This</span></a>
 
                         </span> --><br>
 
-                
 
 
 
-                <h1 class="bannerfont" >Video More Than Everything<br>That Take You To Future</h1>
+
+                <h1 class="bannerfont">Video More Than Everything<br>That Take You To Future</h1>
 
                 <br>
 
@@ -98,19 +98,19 @@ include("header.php");
 
                 <a href="#">
 
-                            <img style="margin-top:-5rem;" src="img/logos.png">
+                    <img style="margin-top:-5rem;" src="img/logos.png">
 
-                        </a>
+                </a>
 
                 <!-- <span data-animate="fadeInUp" class="strong"><a href="#" class="business"><span class="business">Let's Do This</span></a>
 
                         </span> --><br>
 
-                
 
 
 
-                <h1 class="bannerfont" >Video More Than Everything<br>That Take You To Future</h1>
+
+                <h1 class="bannerfont">Video More Than Everything<br>That Take You To Future</h1>
 
                 <br>
 
@@ -176,75 +176,75 @@ include("header.php");
 
 
 
-            <form class="widget-contact-form" novalidate action="contact.php" role="form" method="post">
+                <form class="widget-contact-form" novalidate action="contact.php" role="form" method="post">
 
-                                            <div class="row">
+                    <div class="row">
 
-                                                <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
 
-                                                    <label for="name">Name</label>
+                            <label for="name">Name</label>
 
-                                                    <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Enter your Name">
+                            <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Enter your Name">
 
-                                                </div>
+                        </div>
 
-                                                <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
 
-                                                    <label for="email">Email</label>
+                            <label for="email">Email</label>
 
-                                                    <input type="email" aria-required="true" name="widget-contact-form-email" required class="form-control required email" placeholder="Enter your Email">
+                            <input type="email" aria-required="true" name="widget-contact-form-email" required class="form-control required email" placeholder="Enter your Email">
 
-                                                </div>
+                        </div>
 
-                                            </div>
+                    </div>
 
-                                            <div class="row">
+                    <div class="row">
 
-                                                <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
 
-                                                    <label for="subject">Subject</label>
+                            <label for="subject">Subject</label>
 
-                                                    <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Subject...">
+                            <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Subject...">
 
-                                                </div>
-
-
-
-                                                <div class="form-group col-md-6">
-
-                                                    <label for="name">Phone</label>
-
-                                                    <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Phone">
-
-                                                </div>
+                        </div>
 
 
 
-                                            </div>
+                        <div class="form-group col-md-6">
 
-                                            <div class="form-group">
+                            <label for="name">Phone</label>
 
-                                                <label for="message">Message</label>
+                            <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Phone">
 
-                                                <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
-
-                                            </div>
-
-                                            <br>
+                        </div>
 
 
 
-                                            <div class="row">
+                    </div>
 
-                                                <div class="form-group col-md-12 text-center">
+                    <div class="form-group">
 
-                                                    <button class="btn btn-light btn-rounded" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                        <label for="message">Message</label>
 
-                                                </div>
+                        <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
 
-                                            </div>
+                    </div>
 
-                                        </form>
+                    <br>
+
+
+
+                    <div class="row">
+
+                        <div class="form-group col-md-12 text-center">
+
+                            <button class="btn btn-light btn-rounded" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+
+                        </div>
+
+                    </div>
+
+                </form>
 
             </div>
 
@@ -277,21 +277,21 @@ include("header.php");
         </div>
 
         <div class="row">
-        <?php $sec1=mysqli_query($conn,"SELECT * FROM home_section1 WHERE status='1'");
-        while($rowsec1=mysqli_fetch_array($sec1)){?>
-<div class="col-lg-4 text-center" data-animate="fadeInUp" data-animate-delay="0">
+            <?php $sec1 = mysqli_query($conn, "SELECT * FROM home_section1 WHERE status='1'");
+            while ($rowsec1 = mysqli_fetch_array($sec1)) { ?>
+                <div class="col-lg-4 text-center" data-animate="fadeInUp" data-animate-delay="0">
 
-<a href="<?=$rowsec1['link'];?>">
+                    <a href="<?= $rowsec1['link']; ?>">
 
-    <img src="images/home/<?=$rowsec1['image'];?>" style=" width: 96%;">
+                        <img src="images/home/<?= $rowsec1['image']; ?>" style=" width: 96%;">
 
-    <h3 class="edu"><?=$rowsec1['title'];?>
-    </h3>
+                        <h3 class="edu"><?= $rowsec1['title']; ?>
+                        </h3>
 
-</a>
+                    </a>
 
-</div>
-        <?php } ?>
+                </div>
+            <?php } ?>
 
         </div>
 
@@ -311,35 +311,35 @@ include("header.php");
 
 
 
-    <section style="padding: 0px;">
+<section style="padding: 0px;">
 
-        <div class="">
+    <div class="">
 
-            <div data-bg-image="img/gif/whygig.gif" style="height: 650px;background-image: url(&quot;img/gif/whygig.gif&quot;);" class="bg-loaded">
+        <div data-bg-image="img/gif/whygig.gif" style="height: 650px;background-image: url(&quot;img/gif/whygig.gif&quot;);" class="bg-loaded">
 
-            
-            <?php $sec2=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHERE status='1'"));?>
+
+            <?php $sec2 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM home_section2 WHERE status='1'")); ?>
             <div class="row">
 
-            <div class="col">
+                <div class="col">
 
-            <div class="text-light p-t-30 text-center">
+                    <div class="text-light p-t-30 text-center sec2">
 
-            <h1 class="mb-4"><?=$sec2['title'];?></h1>
+                        <h1 class="mb-4"><?= $sec2['title']; ?></h1>
 
-            <h2 style="color:#ffffff; text-align: center; font-weight: 100; line-height: 1.3em;"><?=$sec2['description'];?></h2>
+                        <h2><?= $sec2['description']; ?></h2>
 
-            </div>
+                    </div>
 
-            </div>
-
-            </div>
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
@@ -379,207 +379,30 @@ include("header.php");
 
         <div data-lightbox="gallery" class="row">
 
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
 
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/1.webp" />
-
+             <?php $sq=mysqli_query($conn, "SELECT * FROM portfolio WHERE status='1' LIMIT 0,6");
+                while($row=mysqli_fetch_array($sq)){   ?>
+                 <div class="col-lg-4" style="padding: 0 35px 35px;">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
+                            <div class="grid-image"> <img alt="Image Lightbox" src="images/portfolio/<?=$row['image'];?>" />
+                            </div>
+                            <div class="oport">
+                                <h5 style="margin-bottom: 0px;"><?=$row['title'];?></h5>
+                                <p><?=$row['description'];?></p>
+                                <hr>
+                            </div>
+                            <div class="grid-description">
+                                <a href="<?=$row['link'];?>" data-lightbox="iframe"><i class="icon-play"></i></a>
+                            </div>
                         </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">Whiteboard Explainer video for a law firm</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=fuo3I-cq2EM" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
                     </div>
-
                 </div>
+                <?php } ?>
 
-            </div>
 
 
-
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
-
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/2.webp" />
-
-                        </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">An Explainer video for Security app</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=ucfy_9zRd98" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
-
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/3.webp" />
-
-                        </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">Infographics video for a software development company</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=LcCRxku067o" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
-
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/4.webp" />
-
-                        </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">Book your Lifestyle</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=132lBovSPNY" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
-
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/5.webp" />
-
-                        </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">An Explainer Video for Steel building Company</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=igT66OcCON0" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="col-lg-4" style="padding: 0 35px 35px;">
-
-                <div class="grid-item">
-
-                    <div class="grid-item-wrap" style=" box-shadow: 0px 1px 20px 0px #ebebeb; border-radius: 15px;">
-
-                        <div class="grid-image"> <img alt="Image Lightbox" src="img/portfolio/6.webp" />
-
-                        </div>
-
-                        <div class="oport">
-
-                            <h5 style="margin-bottom: 0px;">An Explainer Video for an offshore asset management company</h5>
-
-                            <p>Lecturer <span>admin</span> in <span>Creative Design</span> </p>
-
-                            <hr>
-
-                        </div>
-
-                        <div class="grid-description">
-
-                            <a href="https://www.youtube.com/watch?v=4fmYb36lELY" data-lightbox="iframe"><i class="icon-play"></i></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            
 
 
 
@@ -691,7 +514,7 @@ include("header.php");
 
             <div class="col-lg-4 text-center">
 
-                <img src="img/gif/Globe_Section.gif" class="hglobe" >
+                <img src="img/gif/Globe_Section.gif" class="hglobe">
 
             </div>
 
@@ -817,7 +640,7 @@ include("header.php");
 
     <div class="container" style="padding: 2px 30px;">
 
-       
+
 
 
 
@@ -829,11 +652,11 @@ include("header.php");
 
                 <div class=" heading-text heading-section none text-center">
 
-                <p style="color: #ffffff; margin-bottom: 0px; text-align: left; font-size: 10px; font-style: normal;">Testimonials
+                    <p style="color: #ffffff; margin-bottom: 0px; text-align: left; font-size: 10px; font-style: normal;">Testimonials
 
-                </p>
+                    </p>
 
-                <h2 style="color: #ffffff; margin-bottom: 0px; text-align: left;"> Our Customer Say </h2>
+                    <h2 style="color: #ffffff; margin-bottom: 0px; text-align: left;"> Our Customer Say </h2>
 
                 </div>
 
@@ -845,7 +668,7 @@ include("header.php");
 
 
 
-                    
+
 
                     <div class="testimonial-item">
 
@@ -897,7 +720,7 @@ include("header.php");
 
                     </div>
 
-                    
+
 
                 </div>
 
@@ -907,7 +730,7 @@ include("header.php");
 
             <div class="col-lg-4">
 
-               <img src="img/Customer_Says.png" width="100%" class="hpimg">
+                <img src="img/Customer_Says.png" width="100%" class="hpimg">
 
             </div>
 
@@ -952,4 +775,3 @@ include("header.php");
 include("footer.php");
 
 ?>
-
