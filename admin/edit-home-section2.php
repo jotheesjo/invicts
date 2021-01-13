@@ -30,7 +30,7 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHE
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" required name="description"><?=$app_list['description'];?></textarea>
+                                            <textarea class="form-control tiny" required name="description"><?=$app_list['description'];?></textarea>
                                         </div>
                                     </div>
                                   

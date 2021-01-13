@@ -151,7 +151,7 @@ elseif(isset($_POST['insert_homesec2'])){
         exit();
     }
     
-}elseif(isset($_POST['insert_vendor'])){
+}elseif(isset($_POST['insert_testimonial'])){
 
     if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
       $file_name = $_FILES['photo']['name'];
@@ -162,14 +162,14 @@ elseif(isset($_POST['insert_homesec2'])){
       $file_ext=strtolower(end($tmp_explode));
       $extensions= array("jpeg","jpg","png");
     if(in_array($file_ext,$extensions)=== false){
-         header("Location:add-vendor.php?msg=File type not support");
+         header("Location:add-testimonial.php?msg=File type not support");
         exit();
       }elseif($file_size > 2097152){
-        header("Location:add-vendor.php?msg=File size should be lessthan 2MB");
+        header("Location:add-testimonial.php?msg=File size should be lessthan 2MB");
         exit();
       }else{
         $rand=rand(0,1000);
-        $filename="vendor-".$rand.'-'.$file_name;
+        $filename="invictts-".$rand.'-'.$file_name;
         $filepath=IMGPATH.$filename;
          move_uploaded_file($file_tmp,$filepath);
     }
@@ -177,12 +177,12 @@ elseif(isset($_POST['insert_homesec2'])){
         $filename="noimg.png";
     }
 //    echo $filename;
-    $ins=mysqli_query($conn,"INSERT INTO vendors (vendor_name,vendor_email,vendor_mobile,vendor_gst,vendor_image,vendor_address,vendor_city,vendor_state,vendor_pincode,vendor_country) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[gst]','$filename','$_POST[address]','$_POST[city]','$_POST[state]','$_POST[postcode]','$_POST[country]')");
+    $ins=mysqli_query($conn,"INSERT INTO testimonial (name,designation,image,description,status) VALUES('$_POST[name]','$_POST[designation]','$filename','$_POST[status]')");
     if($ins){
-        header("Location:add-vendor.php?msg=vendor created successfully");
+        header("Location:add-testimonial.php?msg=Testimonial created successfully");
         exit();
     }else{
-        header("Location:add-vendor.php?msg=Failed to create vendor");
+        header("Location:add-testimonial.php?msg=Failed to create Testimonial");
         exit();
     }
 }elseif(isset($_POST['insert_appoinment'])){

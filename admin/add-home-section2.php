@@ -29,7 +29,7 @@ include("aside.php");
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Description</label>
-                                            <textarea class="form-control" name="description" required></textarea>
+                                            <textarea class="form-control tiny" name="description" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
