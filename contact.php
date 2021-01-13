@@ -23,32 +23,32 @@
                 <h3 class="text-uppercase">Get In Touch</h3>
                 <p style="font-size:16px;" ><?=$admininfo['get_in_touch'];?></p>
                 <div class="m-t-30">
- <form class="widget-contact-form" novalidate action="contact.php" role="form" method="post">
+ <form class="widget-contact-form" id="contact" name="contact" role="form" method="post">
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="name">Name</label>
-                                                            <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Enter your Name">
+                                                            <input type="text" aria-required="true" name="contactname" required class="form-control required name" placeholder="Enter your Name">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="email">Email</label>
-                                                            <input type="email" aria-required="true" name="widget-contact-form-email" required class="form-control required email" placeholder="Enter your Email">
+                                                            <input type="email" aria-required="true" name="contactemail" required class="form-control required email" placeholder="Enter your Email">
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="subject">Subject</label>
-                                                            <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Subject...">
+                                                            <input type="text" name="contactsubject" required class="form-control required" placeholder="Subject...">
                                                         </div>
 
                                                         <div class="form-group col-md-6">
                                                             <label for="name">Phone</label>
-                                                            <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Phone">
+                                                            <input type="text" aria-required="true" name="contactmobile" required class="form-control required name" placeholder="Phone">
                                                         </div>
 
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="message">Message</label>
-                                                        <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
+                                                        <textarea type="text" name="contactmessage" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
                                                     </div>
                                                     <br>
 
@@ -57,6 +57,7 @@
                                                             <button class="btn btn-light btn-rounded" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                                                         </div>
                                                     </div>
+                                                    <p id="response2"><p>
                                                 </form>
                     
                     
