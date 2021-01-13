@@ -24,7 +24,7 @@
             <div class="heading-text heading-section pack text-center">
                 <!-- <h5>See by yourself</h5> -->
                 <h2>The Most Affordable Pricing</h2>
-                <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare.</p>
+                <p>Learn More About the Video Packages For the Budget You’re Looking for.</p>
             </div>
         </div>
         <!-- <hr class="space"> -->

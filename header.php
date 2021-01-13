@@ -1,5 +1,5 @@
 <?php include("admin/db.php");
-$admininfo=mysqli_fetch_assoc(mysqli_query($conn,"select admin_email,admin_mobile,admin_addr1,admin_addr2,get_in_touch FROM admin_profile WHERE admin_id='5'"));?>
+$admininfo=mysqli_fetch_array(mysqli_query($conn,"select admin_email,admin_mobile,admin_addr1,admin_addr2,get_in_touch FROM admin_profile WHERE admin_id='5'"));?>
 <!DOCTYPE html>
 <html lang="en">
 
