@@ -12,7 +12,7 @@ if($row_count==1){
     $_SESSION[ADMINSESSION.'role']=$info['admin_role'];
      $_SESSION[ADMINSESSION.'id']=$info['admin_id'];
     $_SESSION[ADMINSESSION.'username']=$info['admin_username'];
-    header('Location: index.php');
+    header('Location: testimonial.php');
     exit();
 }else{
     header('Location: login.php?msg=Invalid username or password');
