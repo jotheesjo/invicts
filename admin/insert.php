@@ -170,14 +170,16 @@ elseif(isset($_POST['insert_homesec2'])){
       }else{
         $rand=rand(0,1000);
         $filename="invictts-".$rand.'-'.$file_name;
-        $filepath=IMGPATH.$filename;
+        $filepath="../images/testimonial/".$filename;
          move_uploaded_file($file_tmp,$filepath);
     }
     }else{
         $filename="noimg.png";
     }
 //    echo $filename;
-    $ins=mysqli_query($conn,"INSERT INTO testimonial (name,designation,image,description,status) VALUES('$_POST[name]','$_POST[designation]','$filename','$_POST[status]')");
+
+$desc=mysqli_real_escape_string($conn,$_POST['description']);
+    $ins=mysqli_query($conn,"INSERT INTO testimonial (name,designation,image,description,status) VALUES('$_POST[name]','$_POST[designation]','$filename','$desc','$_POST[status]')");
     if($ins){
         header("Location:add-testimonial.php?msg=Testimonial created successfully");
         exit();

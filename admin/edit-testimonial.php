@@ -1,7 +1,7 @@
 <?php include("header.php");
 include("aside.php");
 if(isset($_GET['id'])){
-$app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHERE home_id='$_GET[id]'"));
+$app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM testimonial WHERE testimonial_id='$_GET[id]'"));
 }
 ?>
 
@@ -15,7 +15,7 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHE
                     <div class="card-body">
                         <form action="update.php" method="post" enctype="multipart/form-data">
                             <div class="form-body">
-                                <h3 class="card-title">Edit Section</h3>
+                                <h3 class="card-title">Edit Testimonial</h3>
                                 <?php if(isset($_GET['msg'])){
                         echo '<br/><p style="color:#ff0000">'.$_GET['msg'].'</p>';
                         }?>
@@ -24,16 +24,30 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHE
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Title</label>
-                                            <input type="hidden" name="home_id" required value="<?=$app_list['home_id'];?>">
-                                            <input type="text" value="<?=$app_list['title'];?>" id="firstName" class="form-control" placeholder="Title" name="title" required>
+                                            <input type="hidden" name="testimonial_id" required value="<?=$app_list['testimonial_id'];?>">
+                                            <input type="hidden" name="img" required value="<?=$app_list['image'];?>">
+                                            <input type="text" value="<?=$app_list['name'];?>" id="firstName" class="form-control" placeholder="Title" name="name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" required name="description"><?=$app_list['description'];?></textarea>
+                                            <label class="control-label">Designation</label>
+                                            <input type="text" value="<?=$app_list['designation'];?>" class="form-control" name="designation" required>
                                         </div>
                                     </div>
-                                  
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Image</label>
+                                            <input type="file" class="form-control" name="photo" >
+                                            <img src="../images/testimonial/<?=$app_list['image'];?>" style="width:50px"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Description</label>
+                                            <textarea class="form-control" name="description" required><?=$app_list['description'];?></textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Status</label>
@@ -43,11 +57,12 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHE
                                             </select>
                                         </div>
                                     </div>
-                                
+
+
                                 </div>
                             </div>
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-success" name="update_homesec2"> <i class="fa fa-check"></i> Save</button>
+                                <button type="submit" class="btn btn-success" name="update_testimonial"> <i class="fa fa-check"></i> Save</button>
                             </div>
                         </form>
                     </div>
@@ -57,3 +72,20 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section2 WHE
     </div>
 </div>
 <?php include("footer.php");?>
+<script>
+    $(document).ready(function() {
+        $("#meetingwith").change(function() {
+            var meeting_with = $(this).val();
+            $.ajax({
+                type: 'POST',
+                data: {
+                    meeting_with: meeting_with
+                },
+                url: 'ajax.php',
+                success: function(data) {
+                    $("#meperson").html(data);
+                }
+            });
+        });
+    });
+</script>

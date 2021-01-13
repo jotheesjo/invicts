@@ -46,7 +46,7 @@ include("aside.php"); ?>
                                             <td><?= $row['name']; ?></td>
                                             <td><?= $row['designation']; ?></td>
                                             <td><?= $row['description']; ?></td>
-                                            <td><?= $row['image']; ?></td>
+                                            <td><img src="../images/testimonial/<?= $row['image']; ?>" style="width:100px;"/></td>
                                             <td><?php if ($row['status'] == 1) {
                                                     echo "Active";
                                                 } else {

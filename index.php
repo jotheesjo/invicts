@@ -667,58 +667,23 @@ include("header.php");
                 <div class="carousel testimonial testimonial-single testimonial-left" data-items="1" data-autoplay="true" data-loop="true" data-autoplay="3500">
 
 
+<?php $testi=mysqli_query($conn,"SELECT * FROM testimonial WHERE status='1'");
+while($testirow=mysqli_fetch_array($testi)){ ?>
+    <div class="testimonial-item">
 
+    <img src="images/testimonial/<?=$testirow['image'];?>" alt="" class="cst">
 
+    <p style="color: #fff;font-weight: 700;"><?=$testirow['name'];?></p>
 
-                    <div class="testimonial-item">
+    <p style="color: #fff;font-weight: 300;"><?=$testirow['designation'];?></p>
 
-                        <img src="img/sc.png" alt="" class="cst">
+    <br>
 
-                        <p style="color: #fff;font-weight: 700;">Paweł Klaman</p>
+ <span><?=$testirow['description'];?></span>
 
-                        <p style="color: #fff;font-weight: 300;">Ux Leader</p>
+</div>
+<?php } ?>
 
-                        <br>
-
-                        <span>Invicts Studio is our one and the only partner who makes the most creative animations. They deal with the requests of the Japanese clients who always have very high expectations for quality. Thanks to that, the customers' satisfaction level has increased significantly. </span>
-
-                    </div>
-
-
-
-                    <div class="testimonial-item">
-
-                        <img src="img/sc.png" alt="" class="cst">
-
-                        <p style="color: #fff;font-weight: 700;">Tufayel Khan</p>
-
-                        <p style="color: #fff;font-weight: 300;">Ux Leader</p>
-
-                        <br>
-
-                        <span>I recommend Invicts Studio without any hesitation! We assigned them to work on a series of animated videos with educational stories and songs for children aged 3-5 y.o. but also on the main character artwork creation used on the series books. I am looking forward to our next project together!</span>
-
-
-
-                    </div>
-
-
-
-                    <div class="testimonial-item">
-
-                        <img src="img/sc.png" alt="" class="cst">
-
-                        <p style="color: #fff;font-weight: 700;">Praveen</p>
-
-                        <p style="color: #fff;font-weight: 300;">Ux Leader</p>
-
-                        <br>
-
-                        <span>I'm very impressed with their quality of work. It is just visually stunning. We hired Invicts Studio to create animated illustrations for one of our media partners. We wanted to create visually compelling branded content. We would love to continue to expand our business together with Invicts Studio</span>
-
-
-
-                    </div>
 
 
 
@@ -751,27 +716,12 @@ include("header.php");
                 </ul>
 
             </div>
-
-        </div>
+            </div>
 
     </div>
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
-
 include("footer.php");
-
 ?>

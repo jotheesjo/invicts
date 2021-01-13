@@ -16,7 +16,7 @@ if(!isset($_SESSION[ADMINSESSION.'role'])){
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Ticket Management</title>
+    <title>Admin Panel</title>
     <!-- This page CSS -->
     <!-- chartist CSS -->
     <link href="assets/node_modules/morrisjs/morris.css" rel="stylesheet">
@@ -59,7 +59,7 @@ if(!isset($_SESSION[ADMINSESSION.'role'])){
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Amarapathi</p>
+            <p class="loader__label">Invicts Studio</p>
         </div>
     </div>
     <!-- ============================================================== -->
