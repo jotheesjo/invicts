@@ -1,10 +1,6 @@
 <?php
 include("header.php");
-
 ?>
-
-
-
 <!-- Desktop View-->
 
 <div id="slider" class="inspiro-slider slider-fullscreen dots-creative hicons" data-height-xs="360" style="min-height: 685px;">
