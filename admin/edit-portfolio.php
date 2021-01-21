@@ -31,9 +31,9 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM portfolio WHERE p
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Image</label>
+                                            <label class="control-label">Image(246*138)</label>
                                             <input type="file" class="form-control" name="photo" >
-                                            <img src="../images/process/<?=$app_list['image'];?>" style="width:50px"/>
+                                            <img src="../images/portfolio/<?=$app_list['image'];?>" style="width:50px"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

@@ -41,7 +41,7 @@ $app_list = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM about WHERE abo
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Image</label>
+                                            <label class="control-label">Image(303*380)</label>
                                             <input type="file" class="form-control" name="photo" >
                                             <img src="../images/about/<?=$app_list['image'];?>" style="width:50px"/>
                                         </div>

@@ -44,6 +44,10 @@ $info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE a
                                             <input type="email" class="form-control" id="exampleInputEmail1" name="admin_email" placeholder="Enter email" required value="<?=$info['admin_email'];?>">
                                         </div>
                                         <div class="form-group">
+                                            <label for="exampleInputEmail1">Enquiry Email</label>
+                                            <input type="text" class="form-control"  name="enquiryemail" placeholder="Enquiry Email" required value="<?=$info['enquiryemail'];?>">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputEmail1">Address Line 1</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" name="admin_addr1" placeholder="Enter Line 1" required value="<?=$info['admin_addr1'];?>">
                                         </div>
@@ -54,6 +58,26 @@ $info=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM admin_profile WHERE a
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Get in Touch</label>
                                             <textarea class="form-control" placeholder="Get in Touch" required name="get_in_touch"><?=$info['get_in_touch'];?></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Facebook</label>
+                                            <input type="text" class="form-control"  name="facebook" placeholder="Facebook" required value="<?=$info['facebook'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Youtube</label>
+                                            <input type="text" class="form-control"  name="youtube" placeholder="Youtube" required value="<?=$info['youtube'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Vimeo</label>
+                                            <input type="text" class="form-control"  name="vimeo" placeholder="Vimeo" required value="<?=$info['vimeo'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Instagram</label>
+                                            <input type="text" class="form-control"  name="instagram" placeholder="Instagram" required value="<?=$info['instagram'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Linkedin</label>
+                                            <input type="text" class="form-control"  name="linkedin" placeholder="Linkedin" required value="<?=$info['linkedin'];?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Change Password</label>

@@ -584,23 +584,6 @@ while($testirow=mysqli_fetch_array($testi)){ ?>
 
             </div>
 
-            <div class="havatars">
-
-                <ul class="avatars">
-
-                    <li><img src="img/team/6.jpg" class="avatar"></li>
-
-                    <li><img src="img/team/7.jpg" class="avatar"></li>
-
-                    <li><img src="img/team/8.jpg" class="avatar"></li>
-
-                    <li><img src="img/team/9.jpg" class="avatar"></li>
-
-                    <li><img src="img/team/10.jpg" class="avatar"></li>
-
-                </ul>
-
-            </div>
             </div>
 
     </div>

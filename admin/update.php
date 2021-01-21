@@ -10,7 +10,7 @@ if(isset($_POST['admin_profile_update'])){
         $pwd='';
     }
     // echo "UPDATE admin_profile SET admin_name ='$_POST[admin_name]',admin_email='$_POST[admin_email]',admin_mobile ='$_POST[admin_mobile]',admin_username='$_POST[admin_username]'".$pwd."WHERE admin_id='5'";
-    $q=mysqli_query($conn,"UPDATE admin_profile SET admin_name ='$_POST[admin_name]',admin_email='$_POST[admin_email]',admin_mobile ='$_POST[admin_mobile]',admin_addr1='$_POST[admin_addr1]',admin_addr2='$_POST[admin_addr2]',get_in_touch='$_POST[get_in_touch]',admin_username='$_POST[admin_username]'".$pwd."WHERE admin_id='5'");
+    $q=mysqli_query($conn,"UPDATE admin_profile SET admin_name ='$_POST[admin_name]',admin_email='$_POST[admin_email]',enquiryemail='$_POST[enquiryemail]',admin_mobile ='$_POST[admin_mobile]',admin_addr1='$_POST[admin_addr1]',admin_addr2='$_POST[admin_addr2]',get_in_touch='$_POST[get_in_touch]',facebook='$_POST[facebook]',youtube='$_POST[youtube]',vimeo='$_POST[vimeo]',instagram='$_POST[instagram]',linkedin='$_POST[linkedin]',admin_username='$_POST[admin_username]'".$pwd."WHERE admin_id='5'");
     if($q){	
         header('Location:admin-profile.php?msg=Profile updated login again');
         exit();

@@ -37,7 +37,7 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM home_section1 WHE
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Image</label>
+                                            <label class="control-label">Image(300*300)</label>
                                             <input type="file" class="form-control" name="photo" >
                                             <img src="../images/home/<?=$app_list['image'];?>" style="width:50px"/>
                                         </div>

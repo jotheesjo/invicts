@@ -44,7 +44,7 @@ include("aside.php");
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Image</label>
+                                            <label class="control-label">Image(246*138)</label>
                                             <input type="file" class="form-control" name="photo" required >
                                         </div>
                                     </div>

@@ -31,7 +31,7 @@ $app_list=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM services WHERE se
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Image</label>
+                                            <label class="control-label">Image(270*250)</label>
                                             <input type="file" class="form-control" name="photo" >
                                             <img src="../images/service/<?=$app_list['image'];?>" style="width:50px"/>
                                         </div>
