@@ -11,7 +11,7 @@
                 <br>
                 <br>
                     <div class="page-title">
-                        <h1 class="banin">Portfolio </h1>
+                    <h1 class="banin"><?=$titleinfo['portfolio'];?></h1>
                     </div>                      
             </div>
     <img src="img/banner/cloud.png" alt="" class="w-100">               

@@ -1,5 +1,6 @@
-<?php
-$to = "jothees.clouddreams@gmail.com"; 
+<?php include("admin/db.php");
+$admininfo=mysqli_fetch_array(mysqli_query($conn,"select enquiryemail FROM admin_profile WHERE admin_id='5'"));
+$to = $admininfo['enquiryemail'];
 if(isset($_POST['quotename'])){
 	$from = $_POST['quoteemail']; 
 	$name = $_POST['quotename'];

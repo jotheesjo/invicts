@@ -8,7 +8,7 @@ include("header.php");
                 <br>
                 <br>
                     <div class="page-title">
-                        <h1 class="banin">Process </h1>
+                    <h1 class="banin"><?=$titleinfo['process'];?></h1>
                     </div>                      
             </div>
     <img src="img/banner/cloud.png" alt="" class="w-100">               

@@ -187,17 +187,37 @@ $desc=mysqli_real_escape_string($conn,$_POST['description']);
         header("Location:add-testimonial.php?msg=Failed to create Testimonial");
         exit();
     }
-}elseif(isset($_POST['insert_appoinment'])){
-    //print_r($_POST);
-    //echo "INSERT INTO appoinment (app_name,app_email,app_mobile,meeting_with,meeting_person,app_regarding,app_date,app_create_date,app_status) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[meeting_with]','$_POST[meeting_person]','$_POST[regarding]','$_POST[appdate]',NOW(),'$_POST[meeting_status]')";
-    $ins=mysqli_query($conn,"INSERT INTO appoinment (app_name,app_email,app_mobile,meeting_with,meeting_person,app_regarding,app_date,app_create_date,app_status) VALUES('$_POST[name]','$_POST[email]','$_POST[mobile]','$_POST[meeting_with]','$_POST[meeting_person]','$_POST[regarding]','$_POST[appdate]',NOW(),'$_POST[meeting_status]')");
-    if($ins){
-        header("Location:add-appoinment.php?msg=Appoinment created successfully");
+}elseif(isset($_POST['insert_client'])){
+  if((isset($_FILES['photo'])) && $_FILES['photo']['name']!=''){
+      $file_name = $_FILES['photo']['name'];
+      $file_size =$_FILES['photo']['size'];
+      $file_tmp =$_FILES['photo']['tmp_name'];
+      $file_type=$_FILES['photo']['type'];
+        $tmp_explode=explode('.',$file_name);
+      $file_ext=strtolower(end($tmp_explode));
+      $extensions= array("jpeg","jpg","png","webp");
+    if(in_array($file_ext,$extensions)=== false){
+         header("Location:clients.php?msg=File type not support");
         exit();
-    }else{
-        header("Location:add-appoinment.php?msg=Failed to create appoinment");
+      }elseif($file_size > 2097152){
+        header("Location:clients.php?msg=File size should be lessthan 2MB");
         exit();
+      }else{
+        $rand=rand(0,1000);
+        $filename="invicts-".$rand.'-'.$file_name;
+        $filepath="../images/clients/".$filename;
+         move_uploaded_file($file_tmp,$filepath);
     }
+    $q=mysqli_query($conn,"INSERT INTO clients SET path='$filename'");
+    if($q){
+
+      header('Location:clients.php?msg=detail updated successfully');
+      exit();
+  }else{
+      header('Location:clients.php?msg=Failed to update detail');
+  }
+    }
+    
 }elseif(isset($_POST['insert_department'])){
     $ins=mysqli_query($conn,"INSERT INTO corporate_department (department_name,department_status,department_create_date) VALUES('$_POST[department_name]','$_POST[status]',NOW())");
     if($ins){

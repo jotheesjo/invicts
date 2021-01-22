@@ -31,15 +31,15 @@ include("header.php");
 
 
 
+                        <?php $slider=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM `slider_section` WHERE id='1'")); ?>
 
-
-                <h1 class="bannerfont">Video More Than Everything<br>That Take You To Future</h1>
+                <h1 class="bannerfont"><?=$slider['description'];?></h1>
 
                 <br>
 
                 <a data-target="#modal-3" data-toggle="modal" href="#" class="btn btn-light" style="text-transform: capitalize;">Get Started</a>
 
-                <a href="https://www.youtube.com/watch?v=07d2dXHYb94" data-lightbox="iframe" class="btn btn-light" style="text-transform: capitalize;">Watch Reel </a>
+                <a href="<?=$slider['link'];?>" data-lightbox="iframe" class="btn btn-light" style="text-transform: capitalize;">Watch Reel </a>
 
                 <!-- <a data-animate="fadeInUp" class="btn btn-outline btn-rounded btn-light">Purchase</a> -->
 
@@ -406,24 +406,16 @@ include("header.php");
             <div class="col-lg-8">
 
                 <div class="carousel" data-items="1">
+                <?php $clients=mysqli_query($conn,"SELECT * FROM clients WHERE status='1'");
+                while($clientsrow=mysqli_fetch_array($clients)){ ?>
+                <div>
 
-                    <div>
+<a href="#"><img alt="" src="<?='images/clients/'.$clientsrow['path'];?>" width="85%">
 
-                        <a href="#"><img alt="" src="img/clogos.png" width="85%">
+</a>
 
-                        </a>
-
-                    </div>
-
-
-
-                    <div>
-
-                        <a href="#"><img alt="" src="img/clogos.png" width="85%">
-
-                        </a>
-
-                    </div>
+</div>
+                <?php } ?>
 
                 </div>
 

@@ -253,4 +253,50 @@ if(isset($_POST['update_testimonial'])){
     }
 }
 
+
+// update_client
+if(isset($_POST['update_client'])){
+  $q=mysqli_query($conn,"UPDATE clients set status='$_POST[status]' WHERE id='$_POST[id]'");
+  if($q){
+
+    header('Location:clients.php?msg=detail updated successfully');
+    exit();
+}else{
+    header('Location:clients.php?msg=Failed to update detail');
+}
+}
+// delete_client
+if(isset($_POST['delete_client'])){
+  $q=mysqli_query($conn,"DELETE FROM clients WHERE id='$_POST[id]'");
+  if($q){
+
+    header('Location:clients.php?msg=detail deleted successfully');
+    exit();
+}else{
+    header('Location:clients.php?msg=Failed to delete detail');
+}
+}
+// update_slidersection
+if(isset($_POST['update_slidersection'])){
+  $description=mysqli_real_escape_string($conn,$_POST['description']);
+  $q=mysqli_query($conn,"UPDATE slider_section  set link='$_POST[link]',description='$description' WHERE id='1'");
+  if($q){
+    header('Location:slider-section.php?msg=detail deleted successfully');
+    exit();
+}else{
+    header('Location:slider-section.php?msg=Failed to delete detail');
+}
+}
+
+//update title
+
+if(isset($_POST['update_title'])){
+  $q=mysqli_query($conn,"UPDATE title_list  set about='$_POST[about]', portfolio='$_POST[portfolio]', package='$_POST[package]', process='$_POST[process]', service='$_POST[service]', contact='$_POST[contact]' WHERE id='1'");
+  if($q){
+    header('Location:title.php?msg=detail updated successfully');
+    exit();
+}else{
+    header('Location:title.php?msg=Failed to update detail');
+}
+}
 ?>

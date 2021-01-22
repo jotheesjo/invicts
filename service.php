@@ -10,10 +10,10 @@ include("header.php");
         <br>
         <br>
         <div class="page-title">
-            <h1 class="banin">Services </h1>
+        <h1 class="banin"><?=$titleinfo['service'];?></h1>
         </div>
     </div>
-    <img src="img/banner/cloud.png" alt="" class="w-100">               
+    <img src="img/banner/cloud.png" alt="" class="w-100">
 </section>
 
 
@@ -34,35 +34,36 @@ include("header.php");
             <p>Making your first impression in front of the investors is a very crucial part in such scenarios.</p>
         </div>
 
-        <?php $sq=mysqli_query($conn, "SELECT * FROM services WHERE status='1'");
-        $i='0';
-        while($row=mysqli_fetch_array($sq)){  
-            if($i % 2 == 0){ ?>
- <div class="row">
-            <div class="col-lg-3 text-md-right">
-                <h2 class="processh3 d-block d-md-none mb-0"> <?=$row['title'];?>   </h2>
-                <img src="images/service/<?=$row['image'];?>" class="wit100">
-            </div>
+        <?php $sq = mysqli_query($conn, "SELECT * FROM services WHERE status='1'");
+        $i = '0';
+        while ($row = mysqli_fetch_array($sq)) {
+            if ($i % 2 == 0) { ?>
+                <div class="row">
+                    <div class="col-lg-3 text-md-right">
+                        <h2 class="processh3 d-block d-md-none mb-0"> <?= $row['title']; ?> </h2>
+                        <img src="images/service/<?= $row['image']; ?>" class="wit100">
+                    </div>
 
-            <div class="col-lg-9">
-                <h2 class="processh3 d-none d-md-block"> <?=$row['title'];?> </h2>
-                <p class="processp text-left"><?=$row['description'];?></p>
-            </div>
-        </div>
-             <?php }else{ ?>
- <div class="row">
- <div class="col-lg-9">
-     <h2 class="processh3 d-none d-md-block"> <?=$row['title'];?> </h2>
-     <p class="processp text-left"><?=$row['description'];?></p>
- </div>
- <div class="col-lg-3 text-md-right">
-     <h2 class="processh3 d-block d-md-none mb-0"> <?=$row['title'];?>   </h2>
-     <img src="images/service/<?=$row['image'];?>" class="wit100">
- </div>
-</div>
-         <?php    }
-           $i++; }?>
-       
+                    <div class="col-lg-9">
+                        <h2 class="processh3 d-none d-md-block"> <?= $row['title']; ?> </h2>
+                        <p class="processp text-left"><?= $row['description']; ?></p>
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h2 class="processh3 d-none d-md-block"> <?= $row['title']; ?> </h2>
+                        <p class="processp text-left"><?= $row['description']; ?></p>
+                    </div>
+                    <div class="col-lg-3 text-md-right">
+                        <h2 class="processh3 d-block d-md-none mb-0"> <?= $row['title']; ?> </h2>
+                        <img src="images/service/<?= $row['image']; ?>" class="wit100">
+                    </div>
+                </div>
+        <?php    }
+            $i++;
+        } ?>
+
 
     </div>
     <br>
@@ -72,7 +73,7 @@ include("header.php");
 
 
 
- 
+
 <section style="background-image: url(img/worldbg.JPG); background-size: cover; padding: 30px;">
     <!-- <img src="img/worldbg - Copy.JPG" class="worldbg"> -->
     <div class="container contains p-0">
@@ -85,20 +86,20 @@ include("header.php");
 
         <div class="row ">
             <div class="col-lg-4 text-center">
-                <img src="img/gif/Globe_Section.gif" class="hglobe" >
+                <img src="img/gif/Globe_Section.gif" class="hglobe">
             </div>
             <div class="col-lg-8">
-                <div class="carousel" data-items="1">
-                    <div>
-                        <a href="#"><img alt="" src="img/clogos.png" width="85%">
-                        </a>
-                    </div>
 
-                    <div>
-                        <a href="#"><img alt="" src="img/clogos.png" width="85%">
-                        </a>
-                    </div>
+                <div class="carousel" data-items="1">
+                    <?php $clients = mysqli_query($conn, "SELECT * FROM clients WHERE status='1'");
+                    while ($clientsrow = mysqli_fetch_array($clients)) { ?>
+                        <div>
+                            <a href="#"><img alt="" src="<?= 'images/clients/' . $clientsrow['path']; ?>" width="85%"></a>
+                        </div>
+                    <?php } ?>
+
                 </div>
+
             </div>
         </div>
     </div>

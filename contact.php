@@ -8,7 +8,7 @@
                 <br>
                 <br>
                     <div class="page-title">
-                        <h1 class="banin">Contact Us  </h1>
+                    <h1 class="banin"><?=$titleinfo['contact'];?></h1>
                     </div> 
                 </div>
                 <img src="img/banner/cloud.png" alt="" class="w-100">               

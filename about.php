@@ -10,7 +10,7 @@ $about=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM about WHERE about_id
         <br>
         <br>
         <div class="page-title">
-            <h1 class="banin">About Us </h1>
+            <h1 class="banin"><?=$titleinfo['about'];?></h1>
         </div>
     </div>
     <img src="img/banner/cloud.png" alt="" class="w-100">               

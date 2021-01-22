@@ -1,10 +1,10 @@
 <?php include("admin/db.php");
-$admininfo=mysqli_fetch_array(mysqli_query($conn,"select admin_email,admin_mobile,admin_addr1,admin_addr2,get_in_touch FROM admin_profile WHERE admin_id='5'"));?>
+$admininfo=mysqli_fetch_array(mysqli_query($conn,"select admin_email,admin_mobile,admin_addr1,admin_addr2,get_in_touch,facebook,youtube,vimeo,instagram,linkedin FROM admin_profile WHERE admin_id='5'"));
+$titleinfo=mysqli_fetch_array(mysqli_query($conn,"select * FROM title_list WHERE id='1'"));
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Invict" />
@@ -26,11 +26,21 @@ $admininfo=mysqli_fetch_array(mysqli_query($conn,"select admin_email,admin_mobil
 
                 <div class="float-left m-t-30 social-icons social-icons-rounded social-icons-colored-hover social-icons-colored">
                     <ul>
-                    <li class="social-facebook"><a href="https://www.facebook.com/invicts.s/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="social-youtube"><a href="https://www.youtube.com/channel/UCgNrXsZgFEtDz3nZ753kcag/featured" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                    <li class="social-vimeo"><a href="https://vimeo.com/user129174218" target="_blank"><i class="fab fa-vimeo"></i></a></li>
-                    <li class="social-instagram"><a href="https://www.instagram.com/invictsstudios/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    <li class="social-linkedin"><a href="https://www.linkedin.com/in/invicts-studios-598087202/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <?php if($admininfo['facebook']!=''){ ?>
+<li class="social-facebook"><a href="<?=$admininfo['facebook'];?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <?php } ?>
+                    <?php if($admininfo['youtube']!=''){ ?>
+<li class="social-youtube"><a href="<?=$admininfo['youtube'];?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    <?php } ?>
+                    <?php if($admininfo['vimeo']!=''){ ?>
+<li class="social-vimeo"><a href="<?=$admininfo['vimeo'];?>" target="_blank"><i class="fab fa-vimeo"></i></a></li>
+                    <?php } ?>
+                    <?php if($admininfo['instagram']!=''){ ?>
+<li class="social-instagram"><a href="<?=$admininfo['instagram'];?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <?php } ?>
+                    <?php if($admininfo['linkedin']!=''){ ?>
+<li class="social-linkedin"><a href="<?=$admininfo['linkedin'];?>" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <?php } ?>
                     </ul>
                 </div>
                     <div class="header-extras float-right">

@@ -9,7 +9,7 @@
                 <br>
                 <br>
                     <div class="page-title">
-                        <h1 class="banin">Packages </h1>
+                    <h1 class="banin"><?=$titleinfo['package'];?></h1>
                     </div>                      
             </div>
     <img src="img/banner/cloud.png" alt="" class="w-100">               
